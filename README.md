@@ -3,5 +3,5 @@ This is a personal project where for the next 30 days, I will challenge myself t
 
 ### Day 1: 
 Setup the project.
-To start the project, I am thinking of creating a splash screen text effect like this one inspired by [this](https://www.youtube.com/watch?v=_JBuHh1HIAA&feature=youtu.be)
+To start the project, I am thinking of creating a splash screen text effect like this one inspired by [this](https://www.youtube.com/watch?v=_JBuHh1HIAA&feature=youtu.be).
 

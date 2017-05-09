@@ -13,4 +13,4 @@ Progress at the end of first day:
 
 #### Work in progress:
 
-![Splash Screen](https://raw.githubusercontent.com/dee0512/UI-Challenge/blob/master/Readme%20Images/Day%201.png "Splash Screen")
+![Splash Screen](https://raw.githubusercontent.com/dee0512/UI-Challenge/master/Readme%20Images/Day%201.png "Splash Screen")

@@ -1,0 +1,49 @@
+page-day1 {
+  .toolbar-background-md{
+    background: none;
+  }
+  .text{
+    font-size: 2em;
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom: 0;
+    margin: auto;
+    height: 2em;
+    .regular{
+      display:block;
+      width:72px;
+      float: left;
+      margin-left: calc(50% - 79.5px);
+    }
+    .bold{
+      display: block;
+      width: 83px;
+      margin-left: 5px;
+      float: left;
+    }
+    &#calculate{
+      visibility: hidden;
+    }
+  }
+  .char{
+    font-size: 0;
+    position: relative;
+    top:0;
+    display:block;
+    float:left;
+    min-height: 10px;
+    -webkit-transition: font-size .5s, top .5s; /* Safari */
+    transition: font-size .5s, top .5s;
+    transition-timing-function:linear;
+
+  }
+  .char.show{
+    font-size: 1em;
+    top:-.5em;
+  }
+  .scroll-content{
+    overflow: hidden
+  }
+}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Day1 } from '../day1/day1';
+import { Example1 } from '../example1/example1';
 
 @Component({
   selector: 'page-home',
@@ -13,6 +13,6 @@ export class HomePage {
   }
 
   gotoCard(cardNumber){
-    this.navCtrl.push(Day1);
+    this.navCtrl.push(Example1);
   }
 }

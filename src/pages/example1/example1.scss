@@ -1,0 +1,154 @@
+page-example1 {
+  $font-color: #FEFEFE;
+  $backdrop-color: #3C3F46;
+  $label-color: #8F9094;
+  $separator-color: #45484F;
+
+  $outer-circle-dia:64px;
+  $grey-circle-dia:58px;
+  $inner-circle-dia:52px;
+  .outer-container {
+    background-color: $backdrop-color;
+  }
+  ion-navbar {
+    .bar-button-default-md, .bar-button-default-ios {
+      color: $font-color;
+    }
+    .toolbar-background-md, .toolbar-background-ios {
+      background: none;
+    }
+  }
+  .text {
+    font-size: 2em;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 275px;
+    margin: auto;
+    height: 2em;
+    color: $font-color;
+    .bold {
+      display: block;
+      width: 120px;
+      float: left;
+      margin-left: calc(50% - 107px);
+    }
+    .lighter {
+      display: block;
+      width: 88px;
+      margin-left: 6px;
+      float: left;
+    }
+    &#calculate {
+      visibility: hidden;
+    }
+  }
+  .char {
+    font-size: 0;
+    position: relative;
+    top: 0;
+    display: block;
+    float: left;
+    min-height: 10px;
+    -webkit-transition: font-size .5s, top .5s; /* Safari */
+    transition: font-size .5s, top .5s;
+    transition-timing-function: linear;
+
+  }
+  .char.show {
+    font-size: 1em;
+    top: -.5em;
+  }
+  .scroll-content {
+    overflow: hidden
+  }
+  .logo {
+    height: 150px;
+    margin-left: calc(50% - 75px);
+  }
+  .form-container {
+    position: absolute;
+    top: 350px;
+    padding-left: 3em;
+    width: 100%;
+    .label {
+      color: $label-color;
+    }
+    .text-input {
+      margin-left: 0;
+      &, &::-webkit-input-placeholder {
+        color: $font-color;
+      }
+    }
+    .username {
+      padding-bottom: 10px;
+      border-bottom: 1px solid $separator-color;
+      width: calc(100% - #{$outer-circle-dia} - 25px);
+    }
+    .password {
+      padding-top: 11px;
+      .text-input {
+        letter-spacing: 3px;
+      }
+    }
+    #button {
+      position: absolute;
+      right: 40px;
+      top:calc(50% - #{$outer-circle-dia /2});
+      opacity: 0;
+      -webkit-transition: opacity .3s; /* Safari */
+      transition: opacity .3s;
+      transition-timing-function: ease-in;
+      .outer-circle {
+        background: #f9f4ed;
+        background: -moz-linear-gradient(-45deg, #f9f4ed 0%, #865453 40%, #eb798a 100%);
+        background: -webkit-linear-gradient(-45deg, #f9f4ed 0%,#865453 40%,#eb798a 100%);
+        background: linear-gradient(135deg, #f9f4ed 0%,#865453 40%,#eb798a 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f4ed', endColorstr='#eb798a',GradientType=1 );
+        height: $outer-circle-dia;
+        width: $outer-circle-dia;
+        border-radius:50%;
+        padding: ($outer-circle-dia - $grey-circle-dia) /2;
+        .grey-circle{
+          height: $grey-circle-dia;
+          width: $grey-circle-dia;
+          background: $backdrop-color;
+          border-radius:50%;
+          padding: ($grey-circle-dia - $inner-circle-dia) /2;
+          .inner-circle{
+            opacity: 0;
+            -webkit-transition: opacity .3s; /* Safari */
+            transition: opacity .3s;
+            -webkit-transition-delay: .1s; /* Safari */
+            transition-delay: .1s;
+            transition-timing-function: ease-in;
+            height: $inner-circle-dia;
+            width: $inner-circle-dia;
+            background: white;
+            border-radius:50%;
+            text-align: center;
+            ion-icon{
+              font-size: $inner-circle-dia - 25px;
+              line-height: $inner-circle-dia;
+              color: $backdrop-color;
+            }
+          }
+        }
+      }
+      &.show{
+        opacity: 1;
+        .outer-circle .grey-circle .inner-circle{
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .footer{
+    width: 100%;
+    position: absolute;
+    bottom: 1em;
+    text-align: center;
+    color:$label-color;
+    font-size: .8em;
+  }
+}

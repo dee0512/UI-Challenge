@@ -11,18 +11,20 @@ import * as _ from 'lodash';
  */
 @IonicPage()
 @Component({
-  selector: 'page-day1',
-  templateUrl: 'day1.html',
+  selector: 'page-example1',
+  templateUrl: 'example1.html',
 })
-export class Day1 {
+export class Example1 {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  regularString="White";
-  boldString="Rabbit";
-  totalLength = this.regularString.length + this.boldString.length;
+  password='';username='';
+  boldString="Awkward";
+  lighterString="Donuts";
+  totalLength = this.lighterString.length + this.boldString.length;
   characterIndexes = [];
   ionViewDidLoad() {
+    $(document).ready(function(){$("input").attr("autocomplete","off");});
     this.pushCharacters();
     this.setCharacterWidth();
     this.animate();
@@ -32,9 +34,9 @@ export class Day1 {
     for (let i=0; i < this.totalLength; i++) {
       this.characterIndexes.push(i);
     }
-    for (let i=0; i < this.regularString.length; i++) {
-      $('#animate .regular').append('<span class="char'+i+' char">'+this.regularString.charAt(i)+'</span>');
-      $('#calculate .regular').append('<span class="char'+i+' char show">'+this.regularString.charAt(i)+'</span>');
+    for (let i=0; i < this.lighterString.length; i++) {
+      $('#animate .lighter').append('<span class="char'+i+' char">'+this.lighterString.charAt(i)+'</span>');
+      $('#calculate .lighter').append('<span class="char'+i+' char show">'+this.lighterString.charAt(i)+'</span>');
     }
     for (let i=0; i < this.boldString.length; i++) {
       $('#animate .bold').append('<span class="char'+i+' char">'+this.boldString.charAt(i)+'</span>');
@@ -43,9 +45,9 @@ export class Day1 {
   }
 
   setCharacterWidth(){
-    for (let i=0; i < this.regularString.length; i++) {
-      let width = $('#calculate .regular .char' + i).width();
-      $('#animate .regular .char' + i).width(width);
+    for (let i=0; i < this.lighterString.length; i++) {
+      let width = $('#calculate .lighter .char' + i).width();
+      $('#animate .lighter .char' + i).width(width);
     }
     for (let i=0; i < this.boldString.length; i++) {
       let width = $('#calculate .bold .char' + i).width();
@@ -57,11 +59,11 @@ export class Day1 {
     setTimeout(() => {
       let index = Math.floor(Math.random() * this.characterIndexes.length);
       let charNum = _.pullAt(this.characterIndexes, [index])[0];
-      if(charNum >= this.regularString.length){
-        charNum = charNum - this.regularString.length;
+      if(charNum >= this.lighterString.length){
+        charNum = charNum - this.lighterString.length;
         $('#animate .bold .char' + charNum).addClass('show');
       }else{
-        $('#animate .regular .char' + charNum).addClass('show');
+        $('#animate .lighter .char' + charNum).addClass('show');
       }
       if(this.characterIndexes.length){
         this.animate();
@@ -69,4 +71,16 @@ export class Day1 {
     }, 50);
   }
 
+  textChanged = function(){
+    let button = $('#button');
+    if(this.password.length >= 8 && this.username.length){
+      if(!button.hasClass('show')){
+        button.addClass('show');
+      }
+    }else{
+      if(button.hasClass('show')){
+        button.removeClass('show');
+      }
+    }
+  }
 }
